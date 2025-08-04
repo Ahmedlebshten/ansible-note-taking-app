@@ -1,0 +1,5 @@
+---
+- hosts: tag_ansible_agent01
+  become: yes
+  roles:
+    - note_app
