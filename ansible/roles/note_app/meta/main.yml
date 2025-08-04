@@ -1,0 +1,34 @@
+---
+galaxy_info:
+  role_name: note_app
+  author: Ahmed Lebshten
+  description: >
+    Ansible role to deploy a Flask-based Note Taking application 
+    on AWS EC2 instances with SQLite database.
+  company: ""
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Amazon
+      versions:
+        - all
+    - name: EL
+      versions:
+        - 9
+    - name: Ubuntu
+      versions:
+        - 20.04
+        - 22.04
+
+  galaxy_tags:
+    - flask
+    - ansible
+    - aws
+    - ec2
+    - sqlite
+    - devops
+    - note-taking
+
+dependencies: []
