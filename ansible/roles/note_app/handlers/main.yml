@@ -1,0 +1,6 @@
+---
+- name: restart note
+  systemd:
+    name: note
+    state: restarted
+    enabled: yes
