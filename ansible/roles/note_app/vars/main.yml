@@ -1,0 +1,7 @@
+---
+# Packages needed
+packages:
+  - python3
+  - python3-pip
+  - sqlite
+
