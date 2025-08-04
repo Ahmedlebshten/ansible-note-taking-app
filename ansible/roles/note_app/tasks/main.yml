@@ -1,0 +1,21 @@
+---
+- name: Install required packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages }}"
+
+- name: Install Flask via pip
+  pip:
+    name: flask
+    executable: pip3
+
+- name: Deploy app.py
+  copy:
+    src: app.py
+    dest: /home/ec2-user/app.py
+    mode: "0755"
+
+
+
+
