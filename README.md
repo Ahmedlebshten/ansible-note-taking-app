@@ -11,7 +11,7 @@ This project is a **DevOps demonstration** that automates the deployment of a si
 ---
 
 ## 🏗️ Project Structure
-ansible_aws_note_app/
+ansible_aws_note_app/ 
 │── ansible/
 │                  ├── ansible.cfg               # Ansible configuration file
 │                  ├── aws_ec2.yml               # Dynamic AWS EC2 inventory plugin
@@ -28,6 +28,8 @@ ansible_aws_note_app/
 │                                            ├── main.yml         # Default variables
 │                                     ├── vars/
 │                                            ├── main.yml         # App-specific variables
+│                                     │── meta/
+│                                            ├── main.yml         # App-meta data
 │
 └── README.md                # Project documentation
 └── .gitignore               # secrets files
@@ -79,15 +81,15 @@ Install Python3, pip, SQLite
 Install Flask
 Deploy app.py
 
--Start the Application:
+- Start the Application:
 
-SSH into the EC2 instance:
+- SSH into the EC2 instance:
 ssh -i ansible.pem ec2-user@<public-ip>
 
-Run Flask app:
+- Run Flask app:
 python3 /home/ec2-user/app.py
 
-Access it in your browser:
+- Access it in your browser:
 http://<EC2_PUBLIC_IP>:5000
 
 - Database:
@@ -97,8 +99,16 @@ Fields:
 id (Primary Key, Integer)
 content (Text)
 created_at (Timestamp)
-To explore DB inside instance:
+
+- To explore DB inside instance:
 sqlite3 /home/ec2-user/notes.db
 sqlite> .tables
+
+- Install role via Ansible Galaxy:
+ansible-galaxy install Ahmedlebshten.note_app
+Then call it in your playbook:
+- hosts: my-ec2
+  roles:
+    - Ahmedlebshten.note_app
 sqlite> .schema notes;
 sqlite> SELECT * FROM notes;
