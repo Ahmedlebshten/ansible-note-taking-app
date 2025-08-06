@@ -149,5 +149,6 @@ Then call it in your playbook:
 
 - hosts: my-ec2
   roles:
-    - Ahmedlebshten.ansible-note-app-role
+    - role: Ahmedlebshten.ansible-note-app-role
+
 
