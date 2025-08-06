@@ -3,6 +3,7 @@
 ## 📌 Overview
 This project is a **DevOps demonstration** that automates the deployment of a simple **Flask-based Note-Taking App** on an **AWS EC2 instance** using **Ansible**.
 
+📦 Technologies Used
 - Application: Flask (Python) + SQLite database
 - Configuration Management: Ansible
 - Cloud Provider: AWS (EC2)
